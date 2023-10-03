@@ -8,11 +8,8 @@
 </head>
 
 <body>
-    <?php
-    require './formularios/formularioGonzalo.php';
-    ?>
     <h1>Formularios</h1>
-    <a href="/formularios/formularioGonzalo.php">Formulario 1</a>
+    <a href="/views/formularioGonzalo.php">Formulario 1</a>
 
 </body>
 
