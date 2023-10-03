@@ -9,7 +9,7 @@
 
 <body>
     <h1>Formularios</h1>
-    <a href="/views/formularioGonzalo.php">Formulario 1</a>
+    <a href="/views/formularioGonzalo.php">Formulario de Gonzalo</a>
 
 </body>
 
