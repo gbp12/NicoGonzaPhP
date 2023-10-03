@@ -1,8 +1,11 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtén el valor del campo "nombre" del formulario
-    $nombre = $_POST["nombre"];
+require_once "../helper/funciones_validacion.php";
 
-    // Realiza alguna acción con los datos, como guardarlos en una base de datos o mostrarlos en la página
+if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
+    $nombre = $_POST["nombre"];
     echo "¡Hola, " . $nombre . "!";
+    echo "<br>";
+    echo $_POST["formOwner"];
+    echo "<br>";
+    echo var_dump($_POST);
 }
