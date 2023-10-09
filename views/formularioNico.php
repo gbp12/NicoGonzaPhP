@@ -7,6 +7,11 @@
     </div>
     </br>
     <div>
+        <label for="correo">Email: </label>
+        <input type="text" name="correo" id="correo" placeholder="Correo electronico">
+    </div>
+    </br>
+    <div>
         <h4>A quien le debes dinero?</h4>
         <input type="radio" id="mh" name="agencia" value="El Ministerio de Hacienda" checked>
         <label for="mh">Ministerio de Hacienda</label><br>
