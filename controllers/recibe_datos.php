@@ -10,14 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
     echo var_dump($_POST);
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "nicolas") {
     $nombre = $_POST["nombre"];
-    $isla = $_POST["isla"];
-    $altura = $_POST["altura"];
+    $agencia = $_POST["agencia"];
+    $dinero = $_POST["dinero"];
     echo "¡Hola, " . $nombre . "!";
     echo "<br>";
-    echo "Isla = " . $isla;
+    echo $agencia . " se dirige hacia tu direccion actual en este instante a recuperar sus " . $dinero . "€";
     echo "<br>";
-    echo "Estas a " . $altura . " metros sobre el nivel del mar";
-    echo "<br>";
+
 
     echo $_POST["formOwner"];
     echo "<br>";
