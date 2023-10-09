@@ -14,10 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
     $dinero = $_POST["dinero"];
     echo "¡Hola, " . $nombre . "!";
     echo "<br>";
-    echo $agencia . " se dirige hacia tu direccion actual en este instante a recuperar sus " . $dinero . "€";
-    echo "<br>";
-
-
-    echo $_POST["formOwner"];
+    echo $agencia . " se dirige a tu direccion actual en este instante a recuperar sus " . $dinero . "€";
     echo "<br>";
 }
