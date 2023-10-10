@@ -10,7 +10,7 @@
     <label for="name">Introduce el nombre de tu personaje (entre 3 y 15 caracteres):</label>
     <input type="text" name="name" placeholder="Nombre aqui" required>
 
-    <label for="rol">Escoge el rol de tu personaje (puedes seleccionar varios):</label>
+    <label for="rol">Escoge el rol de tu personaje:</label>
     <select name="rol" multiple>
         <option value="picaro">Picaro</option>
         <option value="mago">Mago</option>
@@ -19,7 +19,7 @@
     </select>
     <br><br>
 
-    <label for="feature[]">Introduce las características que quieras para tu personaje:</label>
+    <label for="feature[]">Introduce las características que quieras para tu personaje (minimo una):</label>
     <input checked type="checkbox" name="feature[]" value="extrovertido"> Extrovertido
     <input type="checkbox" name="feature[]" value="valiente"> Valiente
     <input type="checkbox" name="feature[]" value="inteligente"> Inteligente
