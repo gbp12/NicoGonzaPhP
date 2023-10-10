@@ -27,3 +27,38 @@ function hasContent($str)
         return false;
     }
 }
+
+
+function isNameValid($name)
+{
+    $regex   = '/^[A-Za-z]{3,15}$/';
+    if (preg_match($regex, $name)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isRolValid($rol)
+{
+    if ($rol == "picaro" || $rol == "mago" || $rol == "guerrero" || $rol == "arquero") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isFeatureValid($feature)
+{
+    if (!is_array($feature)) {
+        return false;
+    }
+    $validFeatures = array("extrovertido", "valiente", "habilidoso", "inteligente");
+    foreach ($feature as $value) {
+        if (!in_array($value, $validFeatures)) {
+            return false;
+        }
+    }
+
+    return true;
+}
