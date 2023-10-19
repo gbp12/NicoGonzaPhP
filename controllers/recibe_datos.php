@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
     if (validateMail($email) && isNumber($dinero) && hasContent($nombre)) {
         echo "¡Hola, " . $nombre . "!";
         echo "<br>";
-        // echo "El email es valido?, " . $isTrue . "!";
         echo "<br>";
         echo $agencia . " se dirige a tu direccion actual en este instante a recuperar sus " . $dinero . "€";
         echo "<br>";
