@@ -4,7 +4,7 @@
         "nombre" => "juan",
         "email" => "juan@gmail.com",
         "deudor" => "mafia",
-        "deuda" => 500,
+        "deuda" => 5000,
 
 
     )
@@ -17,12 +17,12 @@
     <div>
         <input type="text" name="formOwner" value="nicolas" hidden>
         <label for="nombre">Nombre legal:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre completo" value="juan">
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre completo" value=<?php echo $default["nombre"] ?>>
     </div>
     </br>
     <div>
         <label for="correo">Email: </label>
-        <input type="text" name="correo" id="correo" placeholder="Correo electronico">
+        <input type="text" name="correo" id="correo" placeholder="Correo electronico" value=<?php echo $default["email"] ?>>
     </div>
     </br>
     <div>
@@ -37,9 +37,10 @@
         <label for="dg">Dirección General del Patrimonio del Estado</label>
     </div>
     </br>
-    <input type="range" id="dinero" name="dinero" min="0" max="50000" />
+    <input type="range" id="dinero" name="dinero" min="0" max="50000" value=<?php echo $default["deuda"] ?> />
     <label for="dinero">Cuanto dinero debes: </label>
     <h5> <output id="value"> </output>€ </h5>
+
     <label for="myfile">Declaracion de la renta (2021):</label>
     <input type="file" id="myfile" name="myfile">
     </br></br></br>
