@@ -5,10 +5,17 @@
         "email" => "juan@gmail.com",
         "deudor" => "mafia",
         "deuda" => 5000,
+    );
 
+    $handle = fopen("nicoDefault.txt", "r");
+    if ($handle) {
+        while (($line = fgets($handle)) !== false) {
+            echo $line;
+            echo $default[1];
+        }
 
-    )
-
+        fclose($handle);
+    }
     ?>
 
 
