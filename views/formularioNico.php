@@ -1,4 +1,4 @@
-<form method="post" action="../controllers/recibe_datos.php">
+<form method="post" action="../controllers/recibe_datos.php" enctype="multipart/form-data">
     <?php
     $default = array(
         "nombre" => "juan",
@@ -10,8 +10,6 @@
     $handle = fopen("nicoDefault.txt", "r");
     if ($handle) {
         while (($line = fgets($handle)) !== false) {
-            echo $line;
-            echo $default[1];
         }
 
         fclose($handle);
@@ -51,7 +49,6 @@
     <label for="myfile">Declaracion de la renta (2021):</label>
     <input type="file" id="myfile" name="myfile">
     </br></br></br>
-
 
     <input type="submit" value="Enviar">
 

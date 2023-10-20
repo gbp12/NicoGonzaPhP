@@ -15,13 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
     $email = $_POST["correo"];
     $agencia = $_POST["agencia"];
     $dinero = $_POST["dinero"];
+    $file = $_POST["myfile"];
+    print_r($_FILES);
     if (validateMail($email) && isNumber($dinero) && hasContent($nombre)) {
         echo "¡Hola, " . $nombre . "!";
         echo "<br>";
         echo "<br>";
         echo $agencia . " se dirige a tu direccion actual en este instante a recuperar sus " . $dinero . "€";
         echo "<br>";
+        //phpinfo(-1);
     } else {
+        echo "y el file???";
+
         echo "<br><a href=" . "../index.php" . ">Volver al Índice</a>";
     }
 } else {
