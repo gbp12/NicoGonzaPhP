@@ -13,7 +13,7 @@ if (file_exists($file)) {
 ?>
 
 <h2>Creación de personaje</h2>
-<form method="post" action="../controllers/recibe_datos.php">
+<form method="post" action="../controllers/recibe_datos.php" enctype="multipart/form-data">
     <input type="text" name="formOwner" value="gonzalo" hidden>
     <label for="name">Introduce el nombre de tu personaje (entre 3 y 15 caracteres):</label>
     <input type="text" name="name" placeholder="Nombre aqui" required value="<?php echo isset($lines[$lineIndex]) ? trim($lines[$lineIndex]) : ''; ?>">
@@ -45,8 +45,9 @@ if (file_exists($file)) {
     <input type="checkbox" name="feature[]" value="inteligente" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'inteligente') !== false) echo 'checked'; ?>> Inteligente
 
     <input type="checkbox" name="feature[]" value="habilidoso" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'habilidoso') !== false) echo 'checked'; ?>> Habilidoso
-    <br>
-    <input type="file" name="pj">
+    <br><br>
+        <input type="file" name="archivo" id="archivo">
+
 
     <br><br>
     <input type="submit" value="Enviar">

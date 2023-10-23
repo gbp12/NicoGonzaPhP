@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
 
         echo "<br><a href=" . "/views/formularioGonzalo.php" . ">Volver al Formulario</a>";
     }
+    echo var_dump($_POST);
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "nicolas") {
     $nombre = $_POST["nombre"];
     $email = $_POST["correo"];
