@@ -3,10 +3,10 @@
     $defaultFile = fopen("nicoDefault.txt", "r");
 
     $default = array(
-        "nombre" => "jj",
-        "email" => "jj 2gmail.com",
-        "deudor" => "mafia",
-        "deuda" => 8888,
+        "nombre" => "",
+        "email" => "",
+        "deudor" => "",
+        "deuda" => 0,
     );
 
     foreach ($default as $index => $value) {

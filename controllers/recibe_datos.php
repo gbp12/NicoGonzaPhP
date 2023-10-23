@@ -79,6 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
         echo "<br>";
         echo $agencia . " se dirige a tu direccion actual en este instante a recuperar sus " . $dinero . "€";
         echo "<br>";
+        save_store($_POST);
+
 
 
         $isOk = $_FILES["myfile"]["error"];
