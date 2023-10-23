@@ -38,14 +38,15 @@ if (file_exists($file)) {
     <br><br>
 
     <label for="feature[]">Introduce las características que quieras para tu personaje (mínimo una):</label>
-<input type="checkbox" name="feature[]" value="extrovertido" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'extrovertido') !== false) echo 'checked'; ?>> Extrovertido
+    <input type="checkbox" name="feature[]" value="extrovertido" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'extrovertido') !== false) echo 'checked'; ?>> Extrovertido
 
-<input type="checkbox" name="feature[]" value="valiente" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'valiente') !== false) echo 'checked'; ?>> Valiente
+    <input type="checkbox" name="feature[]" value="valiente" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'valiente') !== false) echo 'checked'; ?>> Valiente
 
-<input type="checkbox" name="feature[]" value="inteligente" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'inteligente') !== false) echo 'checked'; ?>> Inteligente
+    <input type="checkbox" name="feature[]" value="inteligente" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'inteligente') !== false) echo 'checked'; ?>> Inteligente
 
-<input type="checkbox" name="feature[]" value="habilidoso" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'habilidoso') !== false) echo 'checked'; ?>> Habilidoso
-
+    <input type="checkbox" name="feature[]" value="habilidoso" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'habilidoso') !== false) echo 'checked'; ?>> Habilidoso
+    <br>
+    <input type="file" name="pj">
 
     <br><br>
     <input type="submit" value="Enviar">
