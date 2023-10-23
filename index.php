@@ -11,6 +11,7 @@
     <h1>Formularios</h1>
     <a href="./views/formularioGonzalo.php">Formulario de Gonzalo</a>
     </br>
+    </br>
     <a href="./views/formularioNico.php">Formulario de Nicolas</a>
 </body>
 
