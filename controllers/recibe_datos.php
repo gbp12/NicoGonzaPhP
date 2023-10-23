@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
 
         $isOk = $_FILES["myfile"]["error"];
         if ($isOk == 0) {
-            echo "ta rumbando";
             $tmp_name = $_FILES["myfile"]["tmp_name"];
             //$name = $_FILES["myfile"]["name"];
             $nameArr = explode(".", $_FILES["myfile"]["name"]);
