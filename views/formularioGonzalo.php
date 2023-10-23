@@ -46,7 +46,8 @@ if (file_exists($file)) {
 
     <input type="checkbox" name="feature[]" value="habilidoso" <?php if (isset($lines[$lineIndex]) && strpos($lines[$lineIndex], 'habilidoso') !== false) echo 'checked'; ?>> Habilidoso
     <br><br>
-        <input type="file" name="archivo" id="archivo">
+        <label for="pj">Sube la data de tu personaje:</label>
+        <input type="file" name="pj">
 
 
     <br><br>

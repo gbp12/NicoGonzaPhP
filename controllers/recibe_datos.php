@@ -31,7 +31,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
 
         echo "<br><a href=" . "/views/formularioGonzalo.php" . ">Volver al Formulario</a>";
     }
-    echo var_dump($_POST);
+
+    if (isset($_FILES["pj"])) {
+        $file = $_FILES["pj"];
+        $file_name = $file["name"];
+        $file_tmp = $file["tmp_name"];
+        $file_destination = "../archivos/";
+
+        if (file_exists($file_destination . $file_name)) {
+            $file_info = pathinfo($file_name);
+            $filename = $file_info['filename'];
+            $extension = $file_info['extension'];
+            
+            $counter = 1;
+            while (file_exists($file_destination . $filename . "_" . $counter . "." . $extension)) {
+                $counter++;
+            }
+            $file_name = $filename . "_" . $counter . "." . $extension;
+        }
+        $file_destination .= $file_name;
+
+        if (move_uploaded_file($file_tmp, $file_destination)) {
+            echo "El archivo se ha subido exitosamente con el nuevo nombre: " . $file_name;
+        } else {
+            echo "Hubo un error al subir el archivo.";
+        }
+    }
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "nicolas") {
     $nombre = $_POST["nombre"];
     $email = $_POST["correo"];
