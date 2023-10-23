@@ -23,11 +23,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
         echo "<br>";
         echo $agencia . " se dirige a tu direccion actual en este instante a recuperar sus " . $dinero . "€";
         echo "<br>";
+
+
         $isOk = $_FILES["myfile"]["error"];
         if ($isOk == 0) {
             echo "ta rumbando";
             $tmp_name = $_FILES["myfile"]["tmp_name"];
-            $name = basename($_FILES["myfile"]["name"]);
+            //$name = $_FILES["myfile"]["name"];
+            $nameArr = explode(".", $_FILES["myfile"]["name"]);
+            $directory = scandir($uploads_dir);
+            $highestInt = (int)filter_var(max($directory), FILTER_SANITIZE_NUMBER_INT);
+
+            $name = $nameArr[0] . ($highestInt + 1) . "." . $nameArr[1];
+
             move_uploaded_file($tmp_name, "$uploads_dir/$name");
         }
     } else {
