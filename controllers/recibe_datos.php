@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
                 $file_info = pathinfo($file_name);
                 $filename = $file_info['filename'];
                 $extension = $file_info['extension'];
-                
+
                 $counter = 1;
                 while (file_exists($file_destination . $filename . "_" . $counter . "." . $extension)) {
                     $counter++;
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
                 echo "El archivo se ha subido exitosamente con el nuevo nombre: " . $file_name;
             }
         }
-    //Este else solo renderiza si hay algun error en un campo
+        //Este else solo renderiza si hay algun error en un campo
     } else {
         echo "<h2>Error en el formulario</h2>";
         if (!isNameValid($_POST["name"])) {
@@ -63,9 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
 
         echo "<br><a href=" . "/views/formularioGonzalo.php" . ">Volver al Formulario</a>";
     }
-
-
-
 } elseif ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "nicolas") {
     $nombre = $_POST["nombre"];
     $email = $_POST["correo"];
@@ -88,10 +85,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&  $_POST["formOwner"] == "gonzalo") {
             $tmp_name = $_FILES["myfile"]["tmp_name"];
             //$name = $_FILES["myfile"]["name"];
             $nameArr = explode(".", $_FILES["myfile"]["name"]);
-            $directory = scandir($uploads_dir);
-            $highestInt = (int)filter_var(max($directory), FILTER_SANITIZE_NUMBER_INT);
+            $counter = 1;
+            while (file_exists($uploads_dir . "/" . $nameArr[0] . $counter . "." . $nameArr[1])) {
+                $counter++;
+            }
+            //$highestInt = (int)filter_var(max($directory), FILTER_SANITIZE_NUMBER_INT);
 
-            $name = $nameArr[0] . ($highestInt + 1) . "." . $nameArr[1];
+            $name = $nameArr[0] . ($counter) . "." . $nameArr[1];
 
             move_uploaded_file($tmp_name, "$uploads_dir/$name");
         }
